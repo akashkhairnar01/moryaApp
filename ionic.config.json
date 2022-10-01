@@ -1,0 +1,7 @@
+{
+  "name": "moryaApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
