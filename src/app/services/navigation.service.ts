@@ -8,11 +8,11 @@ import { NavController } from '@ionic/angular';
 export class NavigationService {
 
   constructor(
-    private _router:Router,
-    private _navCntrl:NavController
+    private _router: Router,
+    private _navCntrl: NavController
   ) { }
 
-  gotoRootPage(url: any){
+  gotoRootPage(url: any) {
     this._navCntrl.navigateRoot([url.page]);
   }
 }

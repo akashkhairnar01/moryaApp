@@ -17,22 +17,22 @@ export class AuthService {
     // private storage: Storage,
     private platform: Platform,
     private dbService: DbService,
-    private navigationService:NavigationService
+    private navigationService: NavigationService
   ) {
     this.platform.ready().then(async () => {
 
       await this.dbService.init();
-      this.dbService.get('user_detail').then(resp=>{
+      this.dbService.get('user_detail').then(resp => {
         console.log(resp);
-        if(resp===null || resp===undefined){
-          this.navigationService.gotoRootPage({'page':'/auth'});
-        }else{
-          this.navigationService.gotoRootPage({'page':'/home'});
+        if (resp === null || resp === undefined) {
+          this.navigationService.gotoRootPage({ page: '/auth' });
+        } else {
+          this.navigationService.gotoRootPage({ page: '/home' });
         }
-      }).catch(err=>{
+      }).catch(err => {
         console.log(err);
-      })
-    })
+      });
+    });
   }
 
 
@@ -44,6 +44,6 @@ export class AuthService {
   }
 
   isAuthenticated() {
-return this.authState.value;
+    return this.authState.value;
   }
 }
